@@ -5,7 +5,7 @@ acceptableActions = ['buff', 'open', 'deploy']
 import Buffs
 
 def CheckVal(AcceptableValues, Value, Debug):
-	#TODO: Make it so that the value type in debug MSG is customisable
+	#TODO: Make it so that the value type in debug message is customisable
 	if not Value in AcceptableValues:
 		if Debug:
 			print('Invalid Value: %s'%Value)
@@ -55,8 +55,12 @@ class Item:
 		self.entityUsedBy = entityUsedBy
 		if self.Action == 'buff':
 			#Buffs.buffs.applyEffect(self.ActionType, self.Value1, self.Value2)
-			print(f'Applied {self.ActionType} to {self.entityUsedBy} for {self.Value2} seconds at {self.Value1} multiplier due to consumed ITEM.')
-	def remove():
+			print(f'Applied {self.ActionType} to {self.entityUsedBy} for {self.Value2} seconds at {self.Value1} multiplier due to consumed ITEM.')	
+
+
+	def remove(self):
 		return
+
+
 Food = Item('consumable', 'buff', 'regen', 15, 5, True)
 Food.use('Player')
