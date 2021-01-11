@@ -22,7 +22,7 @@ class Stage:
 
     def changePos(self, char, x, y):
         self.line = self.level[y-1]
-        self.line = self.line[:x-1] + char + self.line[x+1:]
+        self.line = self.line[:x-1] + char + self.line[x:]
         self.level[y-1] = self.line
 
     def printStage(self):
